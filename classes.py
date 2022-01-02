@@ -1,5 +1,13 @@
 class Environment:
-    i = 12345
+    pop = {}
 
-    def f(self):
-        return 'hello world'
+    def popValues(self):
+        return str(self.pop)
+
+    def __init__(self):
+        self.pop = {}
+
+    def fillSamples(self,rangeVal):
+        self.pop = {}
+        for i in range(rangeVal):
+            self.pop[i] = i%3

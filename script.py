@@ -4,9 +4,13 @@ from classes import Environment
 CYCLE_COUNT = 0
 MAX_CYCLES = 5
 DEBUG = True
+RANDOM = False
+ENV = Environment()
 
-env = Environment()
 
+# Environment Population
+if not RANDOM: 
+    ENV.fillSamples(12)
 
 # BEGIN CYCLE 
 while CYCLE_COUNT!=MAX_CYCLES:
@@ -14,8 +18,9 @@ while CYCLE_COUNT!=MAX_CYCLES:
         print("BOC" , CYCLE_COUNT)
 
     if DEBUG:
-        print("Environment debug:",env.i, env.f())
-
+        print("Environment debug:",ENV.popValues())
+    
     if DEBUG:
         print("EOC" , CYCLE_COUNT)
+        
     CYCLE_COUNT+=1
